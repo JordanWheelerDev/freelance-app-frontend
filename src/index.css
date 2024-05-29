@@ -1,0 +1,83 @@
+:root {
+  --fl-primary-color: #84fab0;
+  --fl-primary-color-hover: #7deda6;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+}
+
+.fl-navbar {
+  background-color: #fff !important;
+  border-bottom: 1px solid #e3e3e3;
+  min-height: 65px;
+}
+
+.fl-card {
+  border-bottom: 2px solid #e3e3e3 !important;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+.fl-heading-text-xl {
+  font-size: 48px;
+  font-weight: 200;
+  color: #333333;
+}
+
+.fl-button-primary {
+  background-color: var(--fl-primary-color);
+  border: none;
+  border-radius: 8px;
+  color: rgb(28, 28, 28);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.fl-button-primary:hover {
+  background-color: var(--fl-primary-color-hover);
+}
+
+.fl-button-primary-small {
+  background-color: var(--fl-primary-color);
+  border: none;
+  border-radius: 8px;
+  color: rgb(28, 28, 28);
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.fl-button-primary-small:hover {
+  background-color: var(--fl-primary-color-hover);
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0)
+  );
+}
