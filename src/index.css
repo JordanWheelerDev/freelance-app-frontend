@@ -33,6 +33,18 @@ body {
   color: #333333;
 }
 
+.fl-heading-text-lg {
+  font-size: 30px;
+  font-weight: 200;
+  color: #333333;
+}
+
+.fl-heading-text-med {
+  font-size: 26px;
+  font-weight: 200;
+  color: #333333;
+}
+
 .fl-button-primary {
   background-color: var(--fl-primary-color);
   border: none;
