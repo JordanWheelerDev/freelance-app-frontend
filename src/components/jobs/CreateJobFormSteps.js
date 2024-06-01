@@ -3,6 +3,8 @@ import Form from 'react-bootstrap/Form';
 import { Row, Col } from 'react-bootstrap';
 import axios from 'axios';
 import Select from 'react-select';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 const Step1 = ({ onNext, initialData }) => {
   const [title, setTitle] = useState(initialData.title || '');
@@ -48,6 +50,10 @@ const Step2 = ({ onNext, onBack, initialData }) => {
     onBack();
   };
 
+  const handleChange = (value) => {
+    setDescription(value);
+  };
+
   return (
     <Row className="d-flex justify-content-center">
       <Col md={6}>
@@ -60,11 +66,11 @@ const Step2 = ({ onNext, onBack, initialData }) => {
         </div>
       </Col>
       <Col md={6}>
-        <Form.Control
-          as="textarea"
+        <ReactQuill
           value={description}
-          className="fl-textarea mb-4"
-          onChange={(e) => setDescription(e.target.value)}
+          onChange={handleChange}
+          theme="snow"
+          className="mb-4"
         />
         <div className="d-flex justify-content-between">
           <button className="fl-button-primary-small" onClick={handleBack}>

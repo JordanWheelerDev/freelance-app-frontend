@@ -1,8 +1,10 @@
 import React from 'react';
 import ProposalForm from './ProposalForm';
 import { Col, Row } from 'react-bootstrap';
+import DOMPurify from 'dompurify';
 
 const JobDetails = ({ job }) => {
+  const sanitizedDescription = DOMPurify.sanitize(job.description);
   return (
     <>
       <div className="mb-3 submit-proposal-title">Submit a proposal</div>
@@ -40,7 +42,10 @@ const JobDetails = ({ job }) => {
               )}
             </div>
             <hr className="pretty-hr" />
-            <div className="mb-3 job-list-description">{job.description}</div>
+            <div
+              className="mb-3 job-list-description"
+              dangerouslySetInnerHTML={{ __html: sanitizedDescription }}
+            ></div>
             <hr className="pretty-hr" />
             <div className="job-list-skills">
               {job.skills.split(',').map((skill, index) => (

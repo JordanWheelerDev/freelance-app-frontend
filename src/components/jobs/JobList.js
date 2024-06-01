@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import DOMPurify from 'dompurify';
 
 const JobList = () => {
   const [jobs, setJobs] = useState([]);
@@ -38,9 +39,24 @@ const JobList = () => {
               >
                 {job.title}
               </Link>
+              {/* Sanitize the description */}
               <div className="job-list-description">
-                {job.description.substring(0, 250)}...
+                {DOMPurify.sanitize(
+                  job.description
+                    .replace(/<\/?p>/g, '')
+                    .replace(/<\/?br>/g, ' ')
+                    .replace(/<\/?strong>/g, '')
+                    .replace(/<\/?em>/g, '')
+                    .replace(/<\/?ul>/g, '')
+                    .replace(/<\/?ol>/g, '')
+                    .replace(/<\/?li>/g, '')
+                    .replace(/<\/?span>/g, '')
+                    .replace(/<\/?i>/g, '')
+                    .replace(/<\/?a>/g, '')
+                ).substring(0, 250)}
+                ...
               </div>
+
               <div className="job-list-skills">
                 {job.skills &&
                   job.skills.split(',').map((skill, index) => (
