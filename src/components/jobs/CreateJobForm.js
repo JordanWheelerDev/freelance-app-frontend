@@ -9,10 +9,14 @@ const CreateJobForm = () => {
         <div className="fl-heading-text-lg mb-3">Create Job</div>
         <Form>
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Control type="text" placeholder="Job Title" />
+            <Form.Control
+              type="text"
+              className="fl-input"
+              placeholder="Job Title"
+            />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Select aria-label="Default select example">
+            <Form.Select className="fl-input" aria-label="Select job category">
               <option>Select Job Category</option>
               <option value="Web Development">Web Development</option>
               <option value="Mobile Development">Mobile Development</option>
@@ -72,14 +76,29 @@ const CreateJobForm = () => {
             </Form.Select>
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Control as="textarea" placeholder="Job Description" />
+            <Form.Control
+              as="textarea"
+              className="fl-textarea"
+              placeholder="Job Description"
+            />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Select aria-label="">
+            <Form.Select className="fl-input" aria-label="Select job length">
               <option>Select Job Length</option>
               <option value="Long Term">Long Term</option>
               <option value="Short Term">Short Term</option>
               <option value="Project-Based">Project-Based</option>
+            </Form.Select>
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Select
+              className="fl-input"
+              aria-label="Select experience level"
+            >
+              <option>Select Experience Level</option>
+              <option value="Entry">Entry</option>
+              <option value="Intermediate">Intermediate</option>
+              <option value="Expert">Expert</option>
             </Form.Select>
           </Form.Group>
         </Form>
