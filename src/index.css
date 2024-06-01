@@ -134,6 +134,60 @@ hr {
   background-color: #fff;
 }
 
+.fl-checkbox input[type='checkbox'] {
+  margin-right: 10px;
+  height: 20px;
+  width: 20px;
+}
+
+.fl-checkbox input[type='checkbox']:checked {
+  background-color: var(--fl-primary-color);
+  color: #333333;
+  outline: none;
+  border: none;
+}
+
+.fl-checkbox input[type='checkbox']:focus {
+  outline: 0 none;
+  box-shadow: none;
+}
+
+.fl-range {
+  width: 100%;
+  height: 1.5rem;
+  padding: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+}
+.fl-range:focus {
+  outline: 0;
+}
+.fl-range:focus::-webkit-slider-thumb {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+.fl-range:focus::-moz-range-thumb {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+.fl-range::-moz-focus-outer {
+  border: 0;
+}
+.fl-range::-webkit-slider-thumb {
+  width: 1rem;
+  height: 1rem;
+  margin-top: -0.25rem;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--fl-primary-color);
+  border: 0;
+  border-radius: 1rem;
+  -webkit-transition: background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+}
+
 .job-form-steps-heading {
   font-size: 44px;
   font-weight: 300;
@@ -158,4 +212,148 @@ hr {
   margin: 5px;
   display: inline-flex;
   align-items: center;
+}
+
+.filter-title {
+  font-size: 20px;
+  font-weight: 300;
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+.job-list-container {
+  margin-bottom: 20px;
+  border: 2px solid #e7e7e7;
+  padding: 20px;
+  border-radius: 5px;
+  transition: all 0.5s ease;
+}
+
+.job-list-container:hover {
+  border-top: 2px solid var(--fl-primary-color);
+  border-bottom: 6px solid var(--fl-primary-color);
+  border-left: 2px solid var(--fl-primary-color);
+  border-right: 2px solid var(--fl-primary-color);
+}
+
+.job-list-date {
+  font-size: 12px;
+  font-weight: 300;
+  color: #808080;
+  margin-bottom: 5px;
+}
+
+.job-list-report {
+  font-size: 12px;
+  font-weight: 300;
+  color: #d65959;
+  margin-bottom: 5px;
+}
+
+.job-list-report:hover {
+  color: #b44949;
+  cursor: pointer;
+}
+
+.job-list-title {
+  font-size: 20px;
+  font-weight: 500;
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+.job-list-title:hover {
+  cursor: pointer;
+}
+
+.job-list-description {
+  font-size: 14px;
+  font-weight: 300;
+  color: #808080;
+  margin-bottom: 20px;
+}
+
+.job-list-skills {
+  margin-bottom: 10px;
+}
+
+.job-list-skill {
+  background-color: var(--fl-primary-color);
+  color: #333333;
+  border-radius: 15px;
+  padding: 5px 10px;
+  margin: 5px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.no-decoration {
+  text-decoration: none;
+}
+
+.job-page-title {
+  font-size: 30px;
+  font-weight: 300;
+  color: #333333;
+}
+
+.pretty-hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.job-list-pay-type {
+  font-size: 14px;
+  font-weight: 300;
+  color: #808080;
+  margin-bottom: 5px;
+}
+
+.job-list-pay-type span {
+  font-weight: 500;
+}
+
+.job-proposal-form {
+  width: 100%;
+  height: 500px;
+  background-color: #f7f7f7;
+  padding: 10px;
+  border-radius: 10px;
+  transition: all 0.5s ease;
+}
+
+.job-proposal-form:focus {
+  border-left: 2px solid var(--fl-primary-color);
+  border-right: 2px solid var(--fl-primary-color);
+  border-top: 2px solid var(--fl-primary-color);
+  border-bottom: 4px solid var(--fl-primary-color);
+  outline: none;
+}
+
+.submit-proposal-title {
+  font-size: 50px;
+  font-weight: 300;
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+.job-section {
+  margin-bottom: 20px;
+  border: 2px solid #e7e7e7;
+  padding: 20px;
+  border-radius: 15px;
+  transition: all 0.5s ease;
+}
+
+.job-section-subheading {
+  font-size: 30px;
+  font-weight: 400;
+  color: #333333;
+  margin-bottom: 10px;
 }
