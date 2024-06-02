@@ -33,12 +33,31 @@ const JobList = () => {
                 <div className="job-list-date">Posted</div>
                 <div className="job-list-report">Report</div>
               </div>
-              <Link
-                to={`/job/${job.id}`}
-                className="job-list-title no-decoration"
-              >
-                {job.title}
-              </Link>
+              <div className="mb-2">
+                <Link
+                  to={`/job/${job.id}`}
+                  className="job-list-title no-decoration"
+                >
+                  {job.title}
+                </Link>
+              </div>
+              <div className="mb-2 d-flex justify-content-between">
+                <div className="job-pay-details">
+                  {job.pay_type == 'Per Project' && (
+                    <span>
+                      Per Project: ${new Intl.NumberFormat().format(job.budget)}
+                      .00 budget
+                    </span>
+                  )}
+                  {job.pay_type == 'Hourly' && (
+                    <span>
+                      Hourly: from $
+                      {new Intl.NumberFormat().format(job.min_pay)}
+                      /hr to ${new Intl.NumberFormat().format(job.max_pay)}/hr.
+                    </span>
+                  )}
+                </div>
+              </div>
               {/* Sanitize the description */}
               <div className="job-list-description">
                 {DOMPurify.sanitize(

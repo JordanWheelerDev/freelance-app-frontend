@@ -54,8 +54,6 @@ const JobDetails = ({ job }) => {
                 </span>
               ))}
             </div>
-            {/* <hr className="pretty-hr" /> */}
-            {/* <ProposalForm jobId={job.id} /> */}
           </Col>
         </Row>
       </div>
