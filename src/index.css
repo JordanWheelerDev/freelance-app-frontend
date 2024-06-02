@@ -382,3 +382,36 @@ hr {
   border-bottom: 4px solid var(--fl-primary-color);
   outline: none;
 }
+
+.success-alert {
+  width: 100%;
+  padding: 10px;
+  transition: all 0.5s ease;
+  border: 2px solid #9de38b;
+  background-color: #7deda6;
+  color: #22422e;
+}
+
+.fl-navbar .dropdown-menu {
+  border-radius: 0px;
+  border: none;
+  width: 250px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.fl-navbar .dropdown-item {
+  padding: 10px 15px;
+}
+
+.fl-navbar .dropdown-divider {
+  height: 0;
+  margin: 5px;
+  overflow: hidden;
+  border-top: 1px solid #e8e8e8;
+}
+
+.fl-navbar .dropdown-title {
+  font-size: 24px;
+  font-weight: 300;
+  color: #333333;
+}
