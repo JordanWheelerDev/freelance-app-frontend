@@ -1,8 +1,8 @@
-// DashboardPage.js
-
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import useAuthentication from '../utilities/useAuthentication';
+import FreelancerDashboard from '../components/dashboard/FreelancerDashboard';
+import ClientDashboard from '../components/dashboard/ClientDashboard';
 
 const DashboardPage = () => {
   const { isLoggedIn, userData } = useAuthentication(); // Destructure userData
@@ -13,13 +13,11 @@ const DashboardPage = () => {
 
   return (
     <Container>
-      <Row>
-        <Col>
-          <h1>Welcome, {userData.full_name}</h1>
-          <p>Email: {userData.email}</p>
-          <h2>Dashboard Page</h2>
-        </Col>
-      </Row>
+      {userData.account_type === 'freelancer' ? (
+        <FreelancerDashboard userData={userData} />
+      ) : (
+        <ClientDashboard userData={userData} />
+      )}
     </Container>
   );
 };

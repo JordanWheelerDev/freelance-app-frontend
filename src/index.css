@@ -415,3 +415,128 @@ hr {
   font-weight: 300;
   color: #333333;
 }
+
+/* Dashboard Styles */
+.dashboard-title {
+  font-size: 40px;
+  font-weight: 300;
+  color: #333333;
+}
+
+.dashboard-profile-details {
+  border: 2px solid #e3e3e3;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.dashboard-profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.dashboard-profile-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.dashboard-profile-name {
+  font-size: 25px;
+  font-weight: 300;
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+/* Profile CSS */
+
+.profile-sidebar {
+  margin-bottom: 20px;
+  border-bottom: 4px solid #e3e3e3;
+  border-left: 2px solid #e3e3e3;
+  border-right: 2px solid #e3e3e3;
+  border-top: 2px solid #e3e3e3;
+  border-radius: 10px;
+  padding: 15px;
+  min-height: 175px;
+}
+
+.profile-user-name {
+  font-size: 25px;
+  font-weight: 300;
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+.profile-user-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex; /* Use flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  margin: 0 auto; /* Center the div itself */
+}
+
+.profile-user-picture img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.profile-user-location {
+  font-size: 20px;
+  font-weight: 300;
+  color: #808080;
+  margin-bottom: 10px;
+}
+
+.profile-user-location svg {
+  margin-right: 10px;
+}
+
+.profile-about-user {
+  margin-bottom: 20px;
+  border-bottom: 4px solid #e3e3e3;
+  border-left: 2px solid #e3e3e3;
+  border-right: 2px solid #e3e3e3;
+  border-top: 2px solid #e3e3e3;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.profile-earnings-sidebar {
+  margin-bottom: 20px;
+  border-bottom: 4px solid #e3e3e3;
+  border-left: 2px solid #e3e3e3;
+  border-right: 2px solid #e3e3e3;
+  border-top: 2px solid #e3e3e3;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.earning-details {
+  font-size: 18px;
+  font-weight: 300;
+  color: #333333;
+}
+
+.profile-skills-sidebar {
+  margin-bottom: 20px;
+  border-bottom: 4px solid #e3e3e3;
+  border-left: 2px solid #e3e3e3;
+  border-right: 2px solid #e3e3e3;
+  border-top: 2px solid #e3e3e3;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.profile-skills-heading {
+  font-size: 25px;
+  font-weight: 300;
+  color: #333333;
+  margin-bottom: 10px;
+}
