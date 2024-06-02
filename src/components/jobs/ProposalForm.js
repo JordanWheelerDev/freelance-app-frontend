@@ -1,13 +1,41 @@
 import React, { useState } from 'react';
-import Form from 'react-bootstrap/Form';
 
 const ProposalForm = ({ jobId }) => {
   const [proposal, setProposal] = useState('');
 
+  // Placeholder for userId
+  const userId = 1;
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Logic to submit proposal
-    console.log('Submitted proposal:', proposal);
+
+    const proposalData = {
+      proposal: proposal,
+      for_job: jobId,
+      from: userId,
+      sent_on: new Date().toISOString(),
+    };
+
+    try {
+      const response = await fetch('http://localhost:5000/api/send-proposal', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(proposalData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit proposal');
+      }
+
+      const result = await response.json();
+      console.log('Submitted proposal:', result);
+      // Clear the form after submission
+      setProposal('');
+    } catch (error) {
+      console.error('Error submitting proposal:', error);
+    }
   };
 
   return (
