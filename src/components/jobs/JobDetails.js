@@ -81,7 +81,13 @@ const JobDetails = ({ job }) => {
             <div className="mb-4">
               This proposal will cost you x bids. You have a total of x bids.
             </div>
-            <ProposalForm jobId={job.id} />
+            <ProposalForm
+              jobId={job.id}
+              jobPayType={job.pay_type}
+              jobMinPay={job.min_pay}
+              jobMaxPay={job.max_pay}
+              jobBudget={job.budget}
+            />
           </Col>
         </Row>
       </div>
