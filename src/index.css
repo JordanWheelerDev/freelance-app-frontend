@@ -467,7 +467,7 @@ hr {
   font-size: 25px;
   font-weight: 300;
   color: #333333;
-  margin-bottom: 10px;
+  margin-bottom: 2px;
 }
 
 .profile-user-picture {
@@ -488,7 +488,7 @@ hr {
 }
 
 .profile-user-location {
-  font-size: 20px;
+  font-size: 14px;
   font-weight: 300;
   color: #808080;
   margin-bottom: 10px;
@@ -537,6 +537,13 @@ hr {
 .profile-skills-heading {
   font-size: 25px;
   font-weight: 300;
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+.profile-headline {
+  font-size: 20px;
+  font-weight: 400;
   color: #333333;
   margin-bottom: 10px;
 }
