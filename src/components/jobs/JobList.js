@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Col, Row, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import DOMPurify from 'dompurify';
+import { formatDistanceToNow, parseISO, format } from 'date-fns';
 
 const JobList = () => {
   const [jobs, setJobs] = useState([]);
@@ -35,19 +36,33 @@ const JobList = () => {
     setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
   };
 
+  const formatPostedTime = (dateString) => {
+    const date = parseISO(dateString);
+    const now = new Date();
+    const timeDifference = now - date;
+
+    if (timeDifference < 24 * 60 * 60 * 1000) {
+      // If the date is within the last 24 hours, show relative time
+      return `${formatDistanceToNow(date, { addSuffix: true })}`;
+    } else {
+      // Otherwise, show formatted date
+      return format(date, 'MMMM d, yyyy');
+    }
+  };
+
   return (
     <>
       {jobs.length === 0 ? (
-        <div className="text-center">
-          No jobs to display right now. Check back soon.
-        </div>
+        <div className="text-center">No jobs to display</div>
       ) : (
         jobs.map((job) => (
           <Row key={job.id}>
             <Col>
               <div className="job-list-container">
                 <div className="d-flex justify-content-between">
-                  <div className="job-list-date">Posted</div>
+                  <div className="job-list-date">
+                    Posted {formatPostedTime(job.posted_on)}
+                  </div>
                   <div className="job-list-report">Report</div>
                 </div>
                 <div className="mb-2">
@@ -63,8 +78,7 @@ const JobList = () => {
                     {job.pay_type === 'Per Project' && (
                       <span>
                         Per Project: $
-                        {new Intl.NumberFormat().format(job.budget)}
-                        .00 budget
+                        {new Intl.NumberFormat().format(job.budget)}.00 budget
                       </span>
                     )}
                     {job.pay_type === 'Hourly' && (
@@ -76,7 +90,6 @@ const JobList = () => {
                     )}
                   </div>
                 </div>
-                {/* Sanitize the description */}
                 <div className="job-list-description">
                   {job.description
                     ? DOMPurify.sanitize(
